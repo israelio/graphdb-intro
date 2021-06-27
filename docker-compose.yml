@@ -7,11 +7,8 @@ services:
         - '8182:8182'
 
   graph-notebook:
-    #image: israelio/graphdb-intro:latest
-    image: graphdb-intro
+    image: israelio/graphdb-intro:latest
     ports:
       - "8888:8888"
-    # volumes:
-    #   - ~/Desktop/GeekTime/notebook:/root/notebook/destination/dir/host
     depends_on:
       - gremlin
