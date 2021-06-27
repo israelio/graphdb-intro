@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  gremlin:
+      image: barrman/gremlin-server
+      ports:
+        - '8182:8182'
+
+  graph-notebook:
+    #image: israelio/graphdb-intro:latest
+    image: graphdb-intro
+    ports:
+      - "8888:8888"
+    # volumes:
+    #   - ~/Desktop/GeekTime/notebook:/root/notebook/destination/dir/host
+    depends_on:
+      - gremlin
